@@ -4,10 +4,6 @@ aihub데이터: https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topM
 
 
 ```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
 from transformers import T5ForConditionalGeneration,AutoTokenizer
 path = "kimdwan/Breadcrumbst5-base-korean-summarize-LOGAN"
 model = T5ForConditionalGeneration.from_pretrained(path)
@@ -20,3 +16,5 @@ token = tokenizer(prefix ,return_tensors="pt")
 output = model.generate(input_ids=token["input_ids"],attention_mask = token["attention_mask"])
 text = tokenizer.decode(output[0])[5:-4]
 text
+```
+
